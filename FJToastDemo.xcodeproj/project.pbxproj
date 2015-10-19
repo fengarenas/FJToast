@@ -13,6 +13,8 @@
 		22109A081BD4E3DF00B4C313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22109A061BD4E3DF00B4C313 /* Main.storyboard */; };
 		22109A0A1BD4E3DF00B4C313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22109A091BD4E3DF00B4C313 /* Assets.xcassets */; };
 		22109A0D1BD4E3DF00B4C313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22109A0B1BD4E3DF00B4C313 /* LaunchScreen.storyboard */; };
+		22109A191BD4E3F300B4C313 /* FJToastManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22109A161BD4E3F300B4C313 /* FJToastManager.m */; settings = {ASSET_TAGS = (); }; };
+		22109A1A1BD4E3F300B4C313 /* FJToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22109A181BD4E3F300B4C313 /* FJToastView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		22109A091BD4E3DF00B4C313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22109A0C1BD4E3DF00B4C313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22109A0E1BD4E3DF00B4C313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22109A151BD4E3F300B4C313 /* FJToastManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJToastManager.h; sourceTree = "<group>"; };
+		22109A161BD4E3F300B4C313 /* FJToastManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJToastManager.m; sourceTree = "<group>"; };
+		22109A171BD4E3F300B4C313 /* FJToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJToastView.h; sourceTree = "<group>"; };
+		22109A181BD4E3F300B4C313 /* FJToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJToastView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		221099FC1BD4E3DF00B4C313 /* FJToastDemo */ = {
 			isa = PBXGroup;
 			children = (
+				22109A141BD4E3F300B4C313 /* FJToast */,
 				22109A001BD4E3DF00B4C313 /* AppDelegate.h */,
 				22109A011BD4E3DF00B4C313 /* AppDelegate.m */,
 				22109A031BD4E3DF00B4C313 /* ViewController.h */,
@@ -77,6 +84,17 @@
 				221099FE1BD4E3DF00B4C313 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22109A141BD4E3F300B4C313 /* FJToast */ = {
+			isa = PBXGroup;
+			children = (
+				22109A151BD4E3F300B4C313 /* FJToastManager.h */,
+				22109A161BD4E3F300B4C313 /* FJToastManager.m */,
+				22109A171BD4E3F300B4C313 /* FJToastView.h */,
+				22109A181BD4E3F300B4C313 /* FJToastView.m */,
+			);
+			path = FJToast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				22109A051BD4E3DF00B4C313 /* ViewController.m in Sources */,
+				22109A191BD4E3F300B4C313 /* FJToastManager.m in Sources */,
+				22109A1A1BD4E3F300B4C313 /* FJToastView.m in Sources */,
 				22109A021BD4E3DF00B4C313 /* AppDelegate.m in Sources */,
 				221099FF1BD4E3DF00B4C313 /* main.m in Sources */,
 			);

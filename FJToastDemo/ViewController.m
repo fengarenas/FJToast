@@ -7,8 +7,16 @@
 //
 
 #import "ViewController.h"
+#import "FJToastManager.h"
+
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+
+static const NSUInteger buttonCount   = 6;
+static const NSUInteger buttonBaseTag = 10000;
 
 @interface ViewController ()
+
+@property (nonatomic, copy) NSArray *buttonTitles;
 
 @end
 
@@ -16,7 +24,71 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self initButtons];
+}
+
+- (void)initButtons {
+    for (int i = 0; i < buttonCount; i++) {
+        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0,50 + i * 50, kScreenWidth, 30)];
+        button.layer.cornerRadius = 3.0;
+        button.layer.borderColor = [UIColor purpleColor].CGColor;
+        button.layer.borderWidth = 1.0;
+        button.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [button setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+        [button setTitle:self.buttonTitles[i] forState:UIControlStateNormal];
+        button.tag = buttonBaseTag + i;
+        [button addTarget:self action:@selector(btnTaped:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+    }
+}
+
+- (IBAction)btnTaped:(UIButton *)sender {
+    switch (sender.tag) {
+        case buttonBaseTag + 0: {
+            [FJToastManager showToast:@"message"];
+        }
+            break;
+        case buttonBaseTag + 1: {
+            [FJToastManager showToast:@"message 5 second"
+                             duration:5.0f];
+        }
+            break;
+        case buttonBaseTag + 2: {
+            [FJToastManager showToast:@"message taped execute code"
+                             duration:3.0f
+                          tapCallback:^{
+                              NSLog(@"toast taped");}];
+        }
+            break;
+        case buttonBaseTag + 3: {
+            [FJToastManager showToast:@"message taped or completed execute code"
+                             duration:3.0f
+                          tapCallback:^{
+                              NSLog(@"toast taped");}
+                             complete:^{
+                                 NSLog(@"toast completed");}];
+        }
+            break;
+        case buttonBaseTag + 4: {
+            [FJToastManager showToast:@"message until finish it" duration:0];
+        }
+            break;
+        case buttonBaseTag + 5: {
+            [FJToastManager hidden];
+        }
+            break;
+            
+        default:
+            [FJToastManager hidden];
+            break;
+    }
+    
+}
+
+#pragma mark - Getter and Setter methon
+
+-(NSArray *)buttonTitles {
+    return @[ @"default toast",@"toast with 5s duration",@"toast with tapCallback",@"toast tap and comlete callback",@"toast no exit",@"exit toast" ];
 }
 
 - (void)didReceiveMemoryWarning {
