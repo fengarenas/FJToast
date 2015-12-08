@@ -5,31 +5,31 @@ a simple toast demo
 ## Install
 
 ```
-import "FJToastManager.h"
+import "FJToast.h"
 ```
 
 ## Usage
 
 ```
 
-[FJToastManager showToast:@"message"];
+[FJToast showToast:@"message"];
 
-[FJToastManager showToast:@"message 5 second" duration:5.0f];
+[FJToast showToast:@"message 5 second" duration:5.0f];
 
-[FJToastManager showToast:@"message taped execute code"
+[FJToast showToast:@"message taped execute code"
                              duration:3.0f
                           tapCallback:^{
                               NSLog(@"toast taped");}];
                               
-[FJToastManager showToast:@"message taped or completed execute code"
+[FJToast showToast:@"message taped or completed execute code"
                              duration:3.0f
                           tapCallback:^{
                               NSLog(@"toast taped");}
                              complete:^{
                                  NSLog(@"toast completed");}];
 
-[FJToastManager showToast:@"message until finish it" duration:0];
-[FJToastManager hidden];
+[FJToast showToast:@"message until finish it" duration:0];
+[FJToast hidden];
 
 ```
 
