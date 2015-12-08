@@ -43,7 +43,7 @@ static const NSTimeInterval FJDefaultDuration = 3.0f;
 + (void)showToast:(NSString *)message duration:(NSTimeInterval)duration tapCallback:(callback)tapCallback complete:(callback)complete {
     FJToastView *toastView = [[FJToastView alloc]initWithMessage:message duration:duration tapCallback:tapCallback complete:complete];
     
-    UIWindow *topWindow = [[UIApplication sharedApplication].windows lastObject];
+    UIWindow *topWindow = [[UIApplication sharedApplication].windows firstObject];
     for (UIView *v in topWindow.subviews) {
         if ([v isMemberOfClass:[toastView class]]) {
             [v removeFromSuperview];
@@ -55,7 +55,7 @@ static const NSTimeInterval FJDefaultDuration = 3.0f;
 
 
 + (void)hidden {
-    UIWindow *topWindow = [[UIApplication sharedApplication].windows lastObject];
+    UIWindow *topWindow = [[UIApplication sharedApplication].windows firstObject];
     for (UIView *v in topWindow.subviews) {
         if ([v isMemberOfClass:[FJToastView class]]) {
             FJToastView *toast = (FJToastView *)v;
