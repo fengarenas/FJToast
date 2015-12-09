@@ -1,6 +1,6 @@
 # FJToast
 
-a simple toast demo
+类似Android的toast提示控件
 
 ## Install
 
